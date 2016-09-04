@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/action_add_note"
+        android:orderInCategory="1"
+        android:title="@string/action_add_note"
+        app:showAsAction="ifRoom" />
+    <!-- ifRoom is to check the orderInCategory and if the particular item's orderInCategory is high enough,
+    then display it as a button in the action bar or tool bar. -->
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <!-- "never" is to No matter the orderInCategory value is, never display it as the button. -->
+
+
+</menu>

@@ -32,21 +32,7 @@ public class MainActivityListFragment extends ListFragment {
     public void onActivityCreated (Bundle savedInstanceState){
 
         super.onActivityCreated(savedInstanceState);
-    /*
-        String[] values = new String[]{"Android","iPhone","windowsMobile","Balckberry",
-                "WebOS","Ubuntu","Window7","Max OS X","Linux","OS/2","Banana","Apple","Orange", "Cat","Dog"};
 
-
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, values);
-        // getActivity() = the context that use this fragment
-        // android.R.layout.simple_list_item_1 = what text view that each item is used
-        // values = all items that is listed
-
-        setListAdapter(adapter);
-        //hey fragment, use this array adapter to display the list item
-
-    */
 
         notes = new ArrayList<Note>();
         notes.add(new Note("This is a new not title!", "This is the body of our note!", Note.Category.PERSONAL));

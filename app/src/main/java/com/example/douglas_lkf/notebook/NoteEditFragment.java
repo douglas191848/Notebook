@@ -41,6 +41,8 @@ public class NoteEditFragment extends Fragment {
 
         //grab the bundle that sends along whether or note our noteEditFragment is creating a new note
         Bundle bundle = this.getArguments();
+
+        //ask: Is any information stored in the Bundle before the orientation changed?
         if(bundle != null){
 
             newNote = bundle.getBoolean(NoteDetailActivity.NEW_NOTE_EXTRA, false);
@@ -121,6 +123,8 @@ public class NoteEditFragment extends Fragment {
         return fragmentLayout;
     }
 
+
+    // communicate between two different orientation: landscape and portrait
     @Override
     public void onSaveInstanceState (Bundle savedInstanceState){
         super.onSaveInstanceState(savedInstanceState);

@@ -58,6 +58,7 @@ public class NoteDetailActivity extends AppCompatActivity {
                 NoteEditFragment noteCreateFragment = new NoteEditFragment();
                 setTitle(R.string.createFragmentTitle);
 
+                //now, we send the information to a fragment, not the activity, so we use bundle rather than intent
                 Bundle bundle = new Bundle();
                 bundle.putBoolean(NEW_NOTE_EXTRA, true);
                 noteCreateFragment.setArguments(bundle);

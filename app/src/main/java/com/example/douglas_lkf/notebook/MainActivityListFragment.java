@@ -34,7 +34,7 @@ public class MainActivityListFragment extends ListFragment {
         super.onActivityCreated(savedInstanceState);
 
 
-        notes = new ArrayList<Note>();
+        /*notes = new ArrayList<Note>();
         notes.add(new Note("This is a new not title!", "This is the body of our note!", Note.Category.PERSONAL));
         notes.add(new Note("Woo, I'm goinng to have a new app!", "Today I learnt how to implement list fragment.", Note.Category.QUOTE));
         notes.add(new Note("What should we do?", "I love the sentence that says hello to world.", Note.Category.FINANCE));
@@ -59,7 +59,13 @@ public class MainActivityListFragment extends ListFragment {
                 "minute and now need to\n" +
                 "finish all the assignments\n" +
                 "in one week under\n" +
-                "deadline pressure.", Note.Category.TECHNICAL));
+                "deadline pressure.", Note.Category.TECHNICAL));*/
+
+        NotebookDbAdapter dbAdapter = new NotebookDbAdapter(getActivity().getBaseContext());
+        dbAdapter.open();
+        notes = dbAdapter.getAllNotes();
+        dbAdapter.close();
+
         noteAdapter = new NoteAdapter(getActivity(), notes);
         setListAdapter(noteAdapter);
 

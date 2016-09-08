@@ -187,15 +187,27 @@ public class NoteEditFragment extends Fragment {
 
         confirmBuilder.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
 
-
-
-
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 Log.d("Save Note", "Note Title: " + title.getText() + "Note Message: "
                         + message.getText() + "Note Category: " + savedButtonCategory);
 
+                NotebookDbAdapter dbAdapter = new NotebookDbAdapter(getActivity().getBaseContext());
+                dbAdapter.open();
+
+                // if it's a new note create it in our database
+                if (newNote) {
+
+            dbAdapter.createNote(title.getText() + "", message.getText() + "",
+                    (savedButtonCategory == null)?Note.Category.PERSONAL: savedButtonCategory
+            );
+
+
+                } else {
+                    //otherwise
+
+                }
                 Intent intent = new Intent(getActivity(), MainActivity.class);
                 startActivity(intent);
             }
